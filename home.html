@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home | Energy4All — SDG 7 Affordable and Clean Energy</title>
+<meta name="description" content="Energy4All website shows how individuals, communities and organisations can take real action on clean, affordable energy.">
+
+<!--    Global stylesheet   -->
+<link rel="stylesheet" href="style.css">
+
+
+
+
+
+<style>
+  /*  fade-in animation for the hero text on page load  */
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content-inner { animation: heroFadeIn 0.8s ease-out; }
+
+  
+  .hero-wrap {
+    background-image:
+      linear-gradient(rgba(10, 35, 70, 0.30), rgba(10, 35, 70, 0.60)),
+      url("images/home_background.jpg");
+  }
+
+  /*  bullet styling for card highlight lists  */
+  .card ul.highlights li {
+    list-style: none;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .card ul.highlights li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+  }
+  .card ul.highlights {
+    padding-left: 0;
+  }
+
+  /*   grid layout for the "explore our topics" content-page gallery  */
+  .topic-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin: 30px 0 60px;
+  }
+
+  /*   interactive topic tile, image + overlay label   */
+  .topic-tile {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 220px;
+    text-decoration: none;
+    display: block;
+    box-shadow: var(--shadow-soft);
+  }
+  .topic-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  /*   hover effect — image zoom + darker overlay + label rises   */
+  .topic-tile:hover img,
+  .topic-tile:focus img {
+    transform: scale(1.08);
+  }
+  .topic-tile .tile-label {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(transparent, rgba(10, 35, 70, 0.9));
+    color: var(--white);
+    padding: 16px;
+    font-weight: 700;
+    transform: translateY(6px);
+    transition: transform 0.3s ease;
+  }
+  .topic-tile:hover .tile-label,
+  .topic-tile:focus .tile-label {
+    transform: translateY(0);
+  }
+
+    main > .section-title:first-of-type {
+    margin-top: 80px;
+    }
+
+</style>
+</head>
+
+<body>
+
+
+  <div class="hero-wrap">
+
+
+
+  <!--   Shared Navigation Bar   -->
+  <header class="site-header">
+    <div class="navbar">
+      <a href="home.html" class="logo">
+        <img src="images/Energy4All_Logo.png" alt="Energy4All logo: a stylised sun above a leaf" class="logo-icon">
+        <span>Energy4All</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-link active">Home</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="ais.html" class="nav-link">Action Impact Simulator</a></li>
+          <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero-content">
+    <div class="hero-content-inner">
+      <h1>Powering Tomorrow with Clean, Affordable Energy</h1>
+      <p>Energy4All explores how everyday choices by students, households and local communities
+        add up to real progress on UN Sustainable Development Goal 7. This isn't just information;
+        it's an invitation to act.</p>
+      <a href="ais.html" class="btn">Try the Impact Simulator</a>
+      <a href="gallery.html" class="btn btn-outline">View the Gallery</a>
+    </div>
+  </div>
+
+</div>
+
+<!--  Main Content  -->
+<main>
+
+  <h2 class="section-title">Why Clean Energy Matters</h2>
+  <div class="card-grid">
+
+    <article class="card">
+      <img src="images/home_card1.jpeg" alt="Solar panels being installed on a residential rooftop">
+      <h3>Adopt Renewable Energy</h3>
+      <p>Millions of households still spend a disproportionate share of their income on energy.
+        Simple, accessible technology can cut costs while cutting emissions and students are
+        often best placed to bring these ideas into their own communities.</p>
+      <ul class="highlights">
+        <li>Switch to LED lighting at home</li>
+        <li>Unplug idle chargers and devices</li>
+        <li>Ask your landlord or hall about efficiency upgrades</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <img src="images/home_card2.jpeg" alt="Row of wind turbines generating renewable electricity on a hillside">
+      <h3>Community-Scale Renewable Power</h3>
+      <p>Wind and solar co-operatives let neighbourhoods generate their own power, keeping costs
+        down and control local. Understanding how these schemes work is a first step toward
+        supporting or starting one.</p>
+      <ul class="highlights">
+        <li>Research community energy schemes near you</li>
+        <li>Share information with neighbours or classmates</li>
+        <li>Support local renewable energy petitions</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <img src="images/home_card3.jpeg" alt="Person adjusting a smart thermostat on a wall">
+      <h3>Efficiency Is Everyone's Job</h3>
+      <p>The cheapest unit of energy is the one never wasted. Small daily habits, multiplied across
+        a household, a campus, or a city, create outsized impact on both bills and emissions.</p>
+      <ul class="highlights">
+        <li>Track your own energy use for a week</li>
+        <li>Advocate for efficient appliances where you study or work</li>
+        <li>Encourage widespread adoption for lasting change</li>
+      </ul>
+    </article>
+
+  </div>
+
+
+  <!-- Interactive gallery  -->
+  <h2 class="section-title">Explore Our Topics</h2>
+  <div class="topic-gallery">
+
+    <a href="content_ST1.html" class="topic-tile">
+      <img src="images/home_ST1.jpeg" alt="Close-up of solar panel cells">
+      <span class="tile-label">Solar Power for Homes</span>
+    </a>
+
+    <a href="content_ST2.html" class="topic-tile">
+      <img src="images/home_ST2.jpg" alt="Wind turbine against a blue sky">
+      <span class="tile-label">Wind Energy in Communities</span>
+    </a>
+
+  
+  </div>
+
+</main>
+
+
+
+<!--      Shared Footer       -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">Energy4All — UN SDG 7: Affordable and Clean Energy</p>
+ 
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Page Editor</h4>
+        <div class="footer-col-links">
+          <a href="pageEditor_ST1.html">Student 1</a>
+          <a href="pageEditor_ST2.html">Student 2</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Validation Report</h4>
+        <div class="footer-col-links">
+          <a href="validation_ST1.html">Student 1</a>
+          <a href="validation_ST2.html">Student 2</a>
+        </div>
+      </div>
+    </div>
+ 
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="pageEditor_ST1.html#accessibility">Accessibility Statement</a>
+    </nav>
+    <p class="footer-student">Student 1 - Navindu Fernando - Template, Navigation, Home Page &amp; Gallery</p>
+    <p class="footer-copy">&copy; 2026 Energy4All Team. Web Design and Development Coursework.</p>
+  </div>
+</footer>
+
+</body>
+</html>

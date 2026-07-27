@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Solar Power for Homes | Energy4All — SDG 7</title>
+<meta name="description" content="How rooftop solar works, what it costs, and how homeowners and students can get started — part of the Energy4All SDG 7 website.">
+
+<!-- Global stylesheet, shared across every page -->
+<link rel="stylesheet" href="style.css">
+
+
+
+<style>
+  .hero {
+    background-image:
+      linear-gradient(rgba(10, 35, 70, 0.45), rgba(10, 35, 70, 0.55)),
+      url("images/content_backgroundST1.jpg.jpg");
+  }
+
+  .toc {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+
+  .toc h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  
+  .toc ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .toc a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary);
+    background: var(--bg-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.25s;
+  }
+
+  .toc a:hover,
+  .toc a:focus {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+ 
+  .content-section {
+    padding: 40px 0;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .content-section:first-of-type {
+    border-top: none;
+  }
+
+  /* two-column text/image layout for content sections */
+  .content-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 36px;
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  .content-columns.reverse .content-img-wrap {
+    order: -1;
+  }
+
+  @media (max-width: 800px) {
+    .content-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /*  styled images within content body */
+  .content-img-wrap img {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    border: 4px solid var(--white);
+  }
+
+  /* fixed "Go to Top" button  */
+  .go-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 10px 25px rgba(18, 62, 115, 0.35);
+    z-index: 500;
+    transition: 0.25s;
+  }
+
+  .go-to-top:hover {
+    background: var(--accent-green);
+    transform: translateY(-4px);
+  }
+
+  .myth-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .myth-item {
+    background: var(--white);
+    border-left: 5px solid var(--accent-green);
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .myth-item h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+
+<body id="page-top">
+
+
+<!--  Shared Header / Navigation  -->
+
+<header class="site-header">
+  <div class="navbar">
+    <a href="home.html" class="logo">
+      <img src="images/Energy4All_logo.png" alt="Energy4All logo: a stylised sun above a leaf" class="logo-icon">
+      <span>Energy4All</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="home.html" class="nav-link">Home</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="ais.html" class="nav-link">Impact Simulator</a></li>
+        <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="profile.html" class="nav-link">Profile</a></li>
+        <li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero / page intro -->
+  <section class="hero" aria-label="Page introduction">
+    <div class="hero-inner">
+      <h1>Solar Power for Homes</h1>
+      <p>Rooftop solar has moved from a niche upgrade to one of the most practical ways a
+        household can cut both bills and emissions. Here's how it actually works, what it
+        costs, and how to take the first step.</p>
+    </div>
+  </section>
+
+
+  <!-- Internal navigation menu-->
+  <nav class="toc" aria-label="Sections on this page">
+    <h2>Jump to a section</h2>
+    <ul>
+      <li><a href="#why-solar">Why Solar Makes Sense</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#costs-savings">Costs &amp; Savings</a></li>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#myths">Common Myths</a></li>
+      <li><a href="#take-action">Take Action</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section 1 -->
+  <section id="why-solar" class="content-section">
+    <h2>Why Solar Makes Sense for Homes</h2>
+    <div class="content-columns">
+      <div>
+        <p>Electricity from the grid is priced to reflect fuel costs, infrastructure and
+          demand  all of which tend to rise over time. A home solar system fixes a large
+          share of that cost the moment it's installed, because sunlight itself is free.
+          For many households, especially those with high daytime electricity use, this
+          turns an unpredictable monthly bill into a far more stable one.</p>
+        <p>There's a community angle too. Every kilowatt-hour generated on a rooftop is a
+          kilowatt-hour the wider grid doesn't need to supply from fossil fuels, which is
+          exactly the kind of small, everyday action Sustainable Development Goal 7 is
+          asking individuals to take.</p>
+      </div>
+      <div class="content-img-wrap">
+        <img src="images/contentST1_sec1.jpg"
+             alt="Close up of  solar panels on a home roof in daylight">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="how-it-works" class="content-section">
+    <h2>How Home Solar Systems Work</h2>
+    <div class="content-columns reverse">
+      <div>
+        <h3>Panels and Inverters</h3>
+        <p>Solar panels convert sunlight into direct current (DC) electricity. Since homes
+          run on alternating current (AC), an inverter sits between the panels and the
+          household wiring to make that conversion  this pairing is the core of almost
+          every residential system.</p>
+        <h3>Batteries and the Grid</h3>
+        <p>Some households add a battery to store excess daytime generation for use at
+          night. Others stay connected to the grid and simply draw from it when their own
+          panels aren't producing enough  both approaches are common, and the right one
+          depends on local electricity pricing and how the household uses power.</p>
+      </div>
+      <div class="content-img-wrap">
+        <img src="images/contentST1_sec2.jpg"
+             alt="Diagram style photo showing a home solar inverter unit mounted on a wall">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="costs-savings" class="content-section">
+    <h2>Costs, Savings and Incentives</h2>
+    <div class="content-columns">
+      <div>
+        <p>Upfront cost is the most common barrier households mention, but it's rarely the
+          full picture. Many regions offer grants, tax credits, or feed-in schemes that pay
+          households for surplus electricity sent back to the grid, which can meaningfully
+          shorten the time it takes a system to pay for itself.</p>
+        <p>As a rough guide, most residential systems recover their upfront cost through
+          bill savings within 6–12 years, and continue generating savings for a decade or
+          more after that  figures vary by location, so checking local schemes is always
+          worthwhile before assuming a number.</p>
+      </div>
+      <div class="content-img-wrap">
+        <img src="images/contentST1_sec3.jpg"
+             alt="Family reviewing household energy bills together at a kitchen table">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="getting-started" class="content-section">
+    <h2>Getting Started as a Homeowner or Student</h2>
+    <p>You don't need to own a roof to start engaging with this topic. Here's a realistic
+      starting point depending on your situation:</p>
+    <ul class="highlights" style="margin-top: 14px; padding-left: 20px;">
+      <li>Homeowners: request quotes from at least two accredited installers and compare
+        expected payback periods, not just upfront price.</li>
+      <li>Renters or students: ask about community solar schemes, which let people without
+        a suitable roof still buy into a shared local solar project.</li>
+      <li>Everyone: use our <a href="ais.html">Impact Simulator</a> to see how switching
+        even a few daily habits compares to a full solar installation.</li>
+    </ul>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="myths" class="content-section">
+    <h2>Common Myths, Debunked</h2>
+    <div class="myth-list">
+      <div class="myth-item">
+        <h3>"Solar only works in sunny countries."</h3>
+        <p>Panels generate electricity from daylight, not heat countries with cloudy but
+          bright climates still see strong output across the year.</p>
+      </div>
+      <div class="myth-item">
+        <h3>"It's too expensive to be worth it."</h3>
+        <p>Costs have fallen sharply over the past decade, and financing or leasing options
+          now exist that spread the cost instead of requiring it all upfront.</p>
+      </div>
+      <div class="myth-item">
+        <h3>"Panels need constant maintenance."</h3>
+        <p>Most residential systems need little beyond an occasional clean and a yearly
+          inspection they have no moving parts to wear out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="take-action" class="content-section">
+    <h2>Take Action Today</h2>
+    <div class="content-columns">
+      <div>
+        <p>Whether or not solar is realistic for your own home right now, understanding how
+          it works  and talking about it  is itself a form of action. Share what you've
+          learned here, explore your own household's or campus's energy use, and see how
+          small, achievable choices add up in our Impact Simulator.</p>
+        <a href="ais.html" class="btn" style="background: var(--primary); color: var(--white); margin-top: 10px;">
+          Try the Impact Simulator
+        </a>
+      </div>
+      <div class="content-img-wrap">
+        <img src="images/contentST1_sec6.webp"
+             alt="Community members installing a small shared solar panel array">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Fixed "Go to Top" button — HTML + CSS only, no JavaScript -->
+<a href="#page-top" class="go-to-top" aria-label="Back to top of page">&uarr;</a>
+
+
+<!--  Shared Footer  -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">Energy4All — UN SDG 7: Affordable and Clean Energy</p>
+
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Page Editor</h4>
+        <div class="footer-col-links">
+          <a href="pageEditor_ST1.html">Student 1</a>
+          <a href="pageEditor_ST2.html">Student 2</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Validation Report</h4>
+        <div class="footer-col-links">
+          <a href="validation_ST1.html">Student 1</a>
+          <a href="validation_ST2.html">Student 2</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="pageEditor_ST1.html#accessibility">Accessibility Statement</a>
+    </nav>
+    <p class="footer-student">Student 1 - Navindu Fernando - Template, Navigation, Home Page, Gallery &amp; this Content Page</p>
+    <p class="footer-copy">&copy; 2026 Energy4All Team. Web Design and Development Coursework.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
