@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3C Validation Report - Student 2 (ST2)</title>
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-hover: #0b5ed7;
+            --dark: #0f172a;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #cbd5e1;
+            --text-main: #334155;
+            --accent: #10b981;
+            --accent-bg: #ecfdf5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background-color: #f1f5f9;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            font-size: 0.95rem;
+        }
+
+        .meta-item strong {
+            color: var(--dark);
+        }
+
+        .quick-nav {
+            background: #f1f5f9;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .quick-nav h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .quick-nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .quick-nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+        }
+
+        h2 {
+            color: var(--dark);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .proof-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8fafc;
+            margin: 1rem 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .proof-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .img-caption {
+            padding: 0.75rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            background-color: #ffffff;
+        }
+
+        .reflection-box {
+            background-color: var(--accent-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        .reflection-box h3 {
+            color: var(--accent);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reflection-box ul {
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .reflection-box li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>W3C Validation Evidence & Report</h1>
+            <p>Project Theme: <strong>Wind Energy in Communities</strong></p>
+            
+            <div class="meta-info">
+                <div class="meta-item"><strong>Student Name:</strong> Jalitha Hangilipola (Student 2)</div>
+                <div class="meta-item"><strong>Validator Tool:</strong> W3C Markup Validation Service</div>
+                <div class="meta-item"><strong>Status:</strong> 100% Compliant (0 Errors)</div>
+            </div>
+        </header>
+
+        <!-- Anchor Navigation -->
+        <nav class="quick-nav">
+            <h3>Jump to Page Validation:</h3>
+            <ul>
+                <li><a href="#validation-splash">1. Splash Page (splash.html)</a></li>
+                <li><a href="#validation-ais">2. Executive Overview (ais.html)</a></li>
+                <li><a href="#validation-content">3. Detailed Content (content_ST2.html)</a></li>
+                <li><a href="#reflection">4. Reflection & Resolution Log</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section 1: splash.html -->
+        <section id="validation-splash">
+            <h2>
+                <span>1. Validation: splash.html</span>
+                <span class="status-badge">0 Errors / 0 Warnings</span>
+            </h2>
+            <p>Validation evidence confirmed via the official W3C Markup Validation Service for <code>splash.html</code>:</p>
+            
+            <div class="proof-card">
+                <img src="images/validation_splash.png" alt="W3C Validation proof showing splash.html with 0 errors" class="proof-img">
+                <div class="img-caption">Figure 1: W3C Markup Validation result for <strong>splash.html</strong> showing document checking completed with no errors.</div>
+            </div>
+        </section>
+
+        <!-- Section 2: ais.html -->
+        <section id="validation-ais">
+            <h2>
+                <span>2. Validation: ais.html</span>
+                <span class="status-badge">0 Errors / 0 Warnings</span>
+            </h2>
+            <p>Validation evidence confirmed via the official W3C Markup Validation Service for <code>ais.html</code>:</p>
+            
+            <div class="proof-card">
+                <img src="images/validation_ais.png" alt="W3C Validation proof showing ais.html with 0 errors" class="proof-img">
+                <div class="img-caption">Figure 2: W3C Markup Validation result for <strong>ais.html</strong> showing document checking completed with no errors.</div>
+            </div>
+        </section>
+
+        <!-- Section 3: content_ST2.html -->
+        <section id="validation-content">
+            <h2>
+                <span>3. Validation: content_ST2.html</span>
+                <span class="status-badge">0 Errors / 0 Warnings</span>
+            </h2>
+            <p>Validation evidence confirmed via the official W3C Markup Validation Service for <code>content_ST2.html</code>:</p>
+            
+            <div class="proof-card">
+                <img src="images/validation_content_ST2.png" alt="W3C Validation proof showing content_ST2.html with 0 errors" class="proof-img">
+                <div class="img-caption">Figure 3: W3C Markup Validation result for <strong>content_ST2.html</strong> showing document checking completed with no errors.</div>
+            </div>
+        </section>
+
+        <!-- Section 4: Reflection -->
+        <section id="reflection">
+            <h2>4. Validation Reflection & Error Resolutions</h2>
+            <div class="reflection-box">
+                <h3>Insights & Lessons Learned During Validation</h3>
+                <p>Running all HTML pages through the official W3C Markup Validation Service ensured strict adherence to HTML5 standards. The following common syntax issues were encountered and resolved during testing:</p>
+                <ul>
+                    <li><strong>Unencoded Character Entities:</strong> In initial drafts of <code>ais.html</code> and <code>content_ST2.html</code>, unencoded characters (such as raw <code>&lt;</code> and <code>&amp;</code> symbols inside text) raised parsing warnings. These were updated to standard HTML entities (<code>&amp;lt;</code> and <code>&amp;amp;</code>).</li>
+                    <li><strong>Corrupted Character Encoding:</strong> Encoding artifacts (e.g., malformed UTF-8 characters like <code>40窶0%</code>) were identified in raw text cards. They were replaced with clean text standard ranges (e.g., <code>40–50%</code>) and explicit <code>&lt;meta charset="UTF-8"&gt;</code> declarations.</li>
+                    <li><strong>Image Accessibility Compliance:</strong> Ensured all validation screenshot placeholders and embedded media elements included explicit, descriptive <code>alt</code> attributes to fulfill WCAG 2.1 accessibility criteria alongside structural validation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Community Clean Energy Initiative • Validation Documentation (Student 2)</p>
+        </footer>
+    </div>
+
+</body>
+</html>

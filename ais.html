@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Energy in Communities - Executive Summary & Overview</title>
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #0ea5e9;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #10b981;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "💨";
+            position: absolute;
+            right: 20px;
+            bottom: -10px;
+            font-size: 8rem;
+            opacity: 0.15;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background-color: #e0f2fe;
+            color: #0284c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .stats-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .stats-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Executive Overview</span>
+            <h1>Wind Energy in Communities</h1>
+            <p class="subtitle">Empowering local economies, clean air, and sustainable independence</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h2>Economic Growth</h2>
+                <p>Generates steady tax revenue and lease payments for schools, infrastructure, and public services while creating local skilled jobs.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h2>Community Ownership</h2>
+                <p>Enables energy cooperatives, distributed micro-turbines, and citizen-led power projects that build local self-reliance.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h2>Health & Environment</h2>
+                <p>Eliminates toxic air pollutants, conserves millions of gallons of water, and rapidly offsets its manufacturing carbon footprint.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏡</div>
+                <h2>Harmonious Coexistence</h2>
+                <p>Designed for minimal land footprint and whisper-quiet operation, allowing agriculture and livestock to thrive adjacent to turbines.</p>
+            </div>
+        </div>
+
+        <section class="stats-section">
+            <h2>Key Performance Indicators</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">40–50%</div>
+                    <div class="stat-label">Kinetic Efficiency</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">&lt; 1 Year</div>
+                    <div class="stat-label">Carbon Offset Time</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">~40 dB</div>
+                    <div class="stat-label">Sound Level at 350m</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">85%+</div>
+                    <div class="stat-label">Material Recyclability</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="nav-footer">
+            <span>Explore full documentation and granular community insights</span>
+            <a href="content.html" class="btn">View Detailed Content &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
