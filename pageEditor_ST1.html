@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Navindu Fernando (Student 1) | Energy4All</title>
+
+    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+
+    <header id="top">
+        <h1>Energy4All — UN SDG 7: Affordable and Clean Energy</h1>
+    </header>
+
+    <section class="stud">
+        <h2>Navindu Fernando — Student 1 — Energy4All Team — Template &amp; Navigation, Home Page, Gallery, Content Page</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <section id="overview">
+                <h2>Overview &amp; Completed Tasks</h2>
+                <p><strong>Name:</strong> Navindu Fernando<br>
+                   <strong>Role:</strong> Student 1 – Template &amp; Navigation, Home Page, Gallery<br>
+                   <strong>Student UOW ID:</strong> 22128180</p>
+                <p>As Student 1, I was responsible for the site's shared visual identity with the team and then
+                   implementing the technical foundation everyone else builds on, as well as my own assigned pages.
+                   Specifically, I completed:</p>
+                <ul>
+                    <li>The shared HTML template, global navigation bar, and global stylesheet (<code>style.css</code>) used by every page on the site</li>
+                    <li>The Home Page (<code>home.html</code>)</li>
+                    <li>The Gallery Page (<code>gallery.html</code>), including its JavaScript-driven interactivity</li>
+                    <li>Individual Content Page (Student 1), "Solar Power for Homes" (<code>content_ST1.html</code>)</li>
+                </ul>
+            </section>
+
+            <section id="template-nav">
+                <h2>Template &amp; Navigation</h2>
+                <p><a href="home.html" target="_blank" rel="noopener">View Home Page</a> &nbsp;|&nbsp;
+                   <a href="validation_ST1.html#template-nav" target="_blank" rel="noopener">View validation evidence</a></p>
+
+                <h3>HTML Structure</h3>
+                <p>Every page shares a single structural skeleton: a <code>&lt;header&gt;</code> containing the logo
+                   and a <code>&lt;nav&gt;</code> with the site's main links, a <code>&lt;main&gt;</code> region that
+                   each page fills with its own content, and a shared <code>&lt;footer&gt;</code> with links to the
+                   relevant Page Editor and Validation Report. Using the same semantic landmarks on every page means
+                   the site structure is predictable for both users and assistive technology, and it's the reason
+                   all pages validate against the same baseline markup.</p>
+
+                <h3>CSS Techniques</h3>
+                <p>The navigation bar uses Flexbox (<code>display: flex</code>) to align the logo and links, with
+                   <code>justify-content: space-between</code> so the layout adapts automatically as links are added
+                   or the viewport narrows. The pill-shaped navbar uses a large <code>border-radius</code> and a soft
+                   <code>box-shadow</code> to look like it's floating above the page, and I later made it translucent
+                   using <code>background: rgba(255,255,255,0.65)</code> combined with
+                   <code>backdrop-filter: blur(14px)</code> so it reads clearly on top of any background image
+                   without hiding it completely.</p>
+
+                <h3>Design and Implementation Rationale</h3>
+                <p>I kept all shared visual colours, fonts, the navbar, card styles, and the footer in the global
+                   stylesheet so that every teammate's page automatically looks consistent without needing to
+                   duplicate CSS. Page-specific styling  is kept in each page's own embedded <code>&lt;style&gt;</code> block instead, so it can't
+                   accidentally override shared rules that other pages depend on.</p>
+            </section>
+
+            <section id="home-page">
+                <h2>Home Page</h2>
+                <p><a href="home.html" target="_blank" rel="noopener">View live page</a> &nbsp;|&nbsp;
+                   <a href="validation_ST1.html#home-page" target="_blank" rel="noopener">View validation evidence</a></p>
+
+                <h3>HTML Structure</h3>
+                <p>The Home Page contains the shared <code>&lt;header&gt;</code> inside a <code>.hero-wrap</code>
+                   container so the background photo runs edge-to-edge behind the navbar. Below that,
+                   <code>&lt;main&gt;</code> contains an <code>&lt;article&gt;</code>-style grid of three content
+                   cards (using semantic <code>&lt;article&gt;</code> elements, each with its own heading, image and
+                   list), followed by a second grid of four <code>&lt;a&gt;</code>-based tiles linking to each team
+                   member's Content Page.</p>
+
+                <h3>CSS Techniques</h3>
+                <p>The card grid and topic-tile grid both use CSS Grid with
+                   <code>repeat(auto-fit, minmax(...))</code>, which lets the number of columns adapt automatically
+                   to the screen width without needing separate media-query breakpoints for every card count. The
+                   topic tiles use a <code>transform: scale()</code> on the image and a gradient overlay that slides
+                   into view on hover, giving clear visual feedback that they're clickable.</p>
+
+                <h3>Design and Implementation Rationale</h3>
+                <p>The three content cards were designed around the spec's requirement to explain why the SDG
+                   matters, who it's relevant to, and what action looks like rather than just describing the goal
+                   itself. The topic-tile gallery exists specifically to connect visitors from the Home Page into each
+                   teammate's individual Content Page.</p>
+            </section>
+
+            <section id="gallery-page">
+                <h2>Gallery Page</h2>
+                <p><a href="gallery.html" target="_blank" rel="noopener">View live page</a> &nbsp;|&nbsp;
+                   <a href="validation_ST1.html#gallery-page" target="_blank" rel="noopener">View validation evidence</a></p>
+
+                <h3>HTML Structure</h3>
+                <p>Each gallery thumbnail is a focusable <code>&lt;div&gt;</code> with <code>tabindex="0"</code> and
+                   <code>data-*</code> attributes holding its title, description and image path, so the
+                   extended-view content can be read directly from the markup by JavaScript rather than being
+                   hard-coded per item. The extended view itself is a single reusable modal, not a separate element
+                   per photo.</p>
+
+                <h3>CSS Techniques</h3>
+                <p>Hover and focus states are styled through a <code>.js-hover</code> class rather than the
+                   <code>:hover</code> pseudo-class, because the spec requires the interaction logic itself to be
+                   handled in JavaScript, not CSS alone. The modal uses <code>position: fixed</code> and
+                   <code>inset: 0</code> to overlay the full viewport, and two toggle classes (<code>.theme-dark</code>,
+                   <code>.font-serif</code>) let the colour scheme and font of the extended view change without
+                   touching the rest of the page.</p>
+
+                <h3>Design and Implementation Rationale</h3>
+                <p>I used JavaScript <code>addEventListener</code> calls for hover, click, and keyboard (Enter/Space)
+                   interaction so the gallery is usable without a mouse, and added <code>Escape</code>-to-close and
+                   click-outside-to-close behaviour so the modal never traps a user without an obvious way out. </p>
+            </section>
+
+            <section id="content-page">
+                <h2>Content Page - Solar Power for Homes</h2>
+                <p><a href="content_ST1.html" target="_blank" rel="noopener">View live page</a> &nbsp;|&nbsp;
+                   <a href="validation_ST1.html#content-page" target="_blank" rel="noopener">View validation evidence</a></p>
+
+                <h3>HTML Structure</h3>
+                <p>The page uses one <code>&lt;h1&gt;</code> for the page title, then six
+                   <code>&lt;section&gt;</code> elements each with a unique <code>id</code> and its own
+                   <code>&lt;h2&gt;</code>, with <code>&lt;h3&gt;</code> subheadings inside the "How It Works"
+                   section to show a genuine heading hierarchy rather than everything sitting at the same level.</p>
+
+                <h3>CSS Techniques</h3>
+                <p>A "jump to section" menu near the top uses anchor links (<code>href="#section-id"</code>) styled
+                   as rounded chips, giving quick internal navigation as required for pages long enough to need it.
+                   The "Go to Top" control is a plain <code>&lt;a href="#page-top"&gt;</code> styled with
+                   <code>position: fixed</code>  deliberately built with HTML and CSS only, with no JavaScript, per
+                   the coursework specification.</p>
+
+                <h3>Design and Implementation Rationale</h3>
+                <p>Content was written from scratch around realistic, achievable actions (getting quotes, checking
+                   community solar schemes, using the Impact Simulator) rather than summarising the SDG itself, to
+                   meet the brief's requirement for original, action-focused content rather than a description of
+                   the goal.</p>
+            </section>
+
+            <section id="challenges">
+                <h2>Challenges &amp; Lessons Learned</h2>
+                <p class="fill-in">Challenge 1: </p><p>Inconsistent Nav Bar Hover Effect Across Pages
+                     while testing the site, I noticed that hovering over a nav link on the Home page produced a clear, visible highlight, 
+                     but the same hover effect looked much fainter on the Gallery page. <br><br>
+                    <strong> Solution:</strong> Instead of relying on the background behind the navbar for contrast, I changed the hover style to use a semi-transparent 
+                    tint of the primary blue colour (rgba(18, 62, 115, 0.1)) instead of the light background colour.<br><br>
+                    <strong>Lesson Learned: </strong> Effects like backdrop-filter only work well when there's contrast between the element and what's behind it</p>
+                <p class="fill-in">Challenge 2: </p><p>Images not loading after testing on a different environment because
+                     windows treats file names as case-insensitive, so home_card1.jpeg and Home_Card1.jpeg are treated as 
+                     the same file. Most web servers and browsers checking against them are case-sensitive. <br><br>
+                    <strong> Solution: </strong>Standardise a naming convention across the whole project. <br><br>
+                    <strong>Lesson Learned: </strong>A site can work perfectly during local development and still break the moment it's deployed or shared. </p>
+            </section>
+
+            <section id="accessibility">
+                <h2>Accessibility Considerations</h2>
+                <p>Across the pages I built, I applied the following accessibility practices:</p>
+                <ul>
+                    <li>Semantic HTML landmarks (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+                        <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) so
+                        screen readers can navigate the page structure directly.</li>
+                    <li>Meaningful, distinct <code>alt</code> text on every image, describing what the image shows
+                        rather than repeating the surrounding heading.</li>
+                    <li>Keyboard accessibility on the Gallery Page: every thumbnail has <code>tabindex="0"</code>
+                        and responds to Enter/Space, and the modal can be closed with the Escape key.</li>
+                    <li>Visible focus states (<code>:focus-visible</code>) on interactive elements, so keyboard
+                        users can always see where they are on the page.</li>
+                    <li>Sufficient colour contrast between text and background, checked manually against the site's
+                        blue/white colour palette.</li>
+                </ul>
+                <p>These choices matter because they mean the site remains usable for people relying on screen
+                   readers, keyboard navigation, or who simply have a slower or less precise pointing device. </p>
+            </section>
+
+            <section id="compliance">
+                <h2>JANET Compliance</h2>
+                <p>This website adheres to responsible web publishing standards as required by the JANET Acceptable
+                   Use Policy:</p>
+                <ul>
+                    <li><strong>No copyright infringement:</strong> Images are generated or used with appropriate
+                        permissions. All external sources are cited in the references section.</li>
+                    <li><strong>No offensive material:</strong> The content is appropriate and respectful, avoiding
+                        any language or imagery that could be considered offensive or inappropriate. The site
+                        contains only educational content suitable for all audiences.</li>
+                    <li><strong>Privacy:</strong> No personal data is collected, stored, or transmitted. No cookies
+                        or tracking mechanisms are used.</li>
+                    <li><strong>Security:</strong> No server-side processing or database connections. All
+                        interactions are client-side only.</li>
+                    <li><strong>Accessibility:</strong> The site follows WCAG 2.1 guidelines with semantic HTML and
+                        accessible navigation.</li>
+                </ul>
+            </section>
+
+            <section id="meetings">
+                <h2>Group Meetings &amp; Individual Contribution Log</h2>
+                <table>
+                    <caption>Meeting log</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Date &amp; Time</th>
+                            <th scope="col">Format</th>
+                            <th scope="col">Objective</th>
+                            <th scope="col">Attended</th>
+                            <th scope="col">Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td >15 JUN 2026</td>
+                            <td >Face-to-face</td>
+                            <td >Project kickoff - topic selection and role assignment</td>
+                            <td >Yes</td>
+                            <td >I agreed to take responsibility for the Home Page, Gallery and global CSS.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td >24 JUN 2026</td>
+                            <td >Face-to-face</td>
+                            <td >Design planning - colour scheme, layout, and content outline</td>
+                            <td >Yes</td>
+                            <td >Started designing the colour scheme and layout of the teams page</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td >8 JUL 2026</td>
+                            <td >Online</td>
+                            <td >Progress check - template and navigation review</td>
+                            <td >Yes</td>
+                            <td >	Demonstrated completed template and navigation bar, received feedback </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td >13 JUL 2026</td>
+                            <td >Online</td>
+                            <td >Integration - combining individual pages into shared structure</td>
+                            <td c>Yes</td>
+                            <td >Integrated all team members' content pages into the shared template</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td >15 JUL 2026</td>
+                            <td >Online</td>
+                            <td >Testing - cross-browser testing and bug fixes</td>
+                            <td >Yes</td>
+                            <td >Fixed responsive layout issues and validated HTML on all pages</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td >16 JUL 2026</td>
+                            <td >Face-to-face</td>
+                            <td >Final review - documentation, validation, and submission prep</td>
+                            <td >Yes</td>
+                            <td >Completed page editor documentation and validation screenshots</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="references">
+                <h2>References</h2>
+              
+                <ol class="ref">
+                    <li id="ref1" >Blackboard (2026). Blackboard. [online] Westminster.ac.uk. 
+                      Available at: https://learning.westminster.ac.uk/ultra/courses/_106071_1/outline/edit/document/_6155106_1?courseid=_106071_1&linkcontentid=_6155106_1 [Accessed 19 July 2026].</li>
+                    <li id="ref2">w3schools (2019). CSS Padding. [online] W3schools.com. 
+                      Available at: https://www.w3schools.com/css/css_padding.asp [Accessed 20 July 2026].</li>
+                    <li id="ref3" >https://www.pexels.com/</li>
+                    <li id="ref4" >Unsplash (2025). Beautiful Free Images & Pictures. [online] Unsplash. Unsplash.
+                     Available at: https://unsplash.com/ [Accessed 20 July 2026].</li>
+                    <li id="ref5" >Learn CSS. (n.d.). [online] web.dev. Available at: https://web.dev/learn/css [Accessed 20 July 2026]./</li>
+                    <li id="ref6" >Learn JavaScript. (n.d.). [online] web.dev. Available at: https://web.dev/learn/javascript [Accessed 20 July 2026]./</li>
+                    <li id="ref7" ><li id="ref6" >Kavita Rathore, S.K. (2023). Renewable Energy for Sustainable Development Goal of Clean and Affordable Energy.
+                       International Journal of Materials, Manufacturing and Sustainable Technologies (IJMMST), [online] 2(1), pp.01–15. Available 
+                       at: https://www.researchgate.net/profile/Sunil-Kumar-211/publication/370105228_Renewable_Energy_for_Sustainable_Development_Goal_of_Clean_and_Affordable_Energy/links/643f8845e881690c4be3f5f4/Renewable-Energy-for-Sustainable-Development-Goal-of-Clean-and-Affordable-Energy.pdf [Accessed 25 June 2026].
+                      </li></li>
+                     <li id="ref8" >Mccollum, D., Gomez, L., Riahi, E. and Parkinson, S. (2017). SDG 7 ENSURE ACCESS TO AFFORDABLE, RELIABLE, SUSTAINABLE AND MODERN ENERGY FOR ALL. [online] Available at: https://pure.iiasa.ac.at/id/eprint/14621/1/SDGs-interactions-7-clean-energy.pdf [Accessed 20 July 2026].</li> 
+                </ol>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Pages I developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul>
+                    <li><a href="#template-nav">Template &amp; Navigation</a></li>
+                    <li><a href="#home-page">Home Page</a></li>
+                    <li><a href="#gallery-page">Gallery Page</a></li>
+                    <li><a href="#content-page">Content Page</a></li>
+                </ul>
+            </ul>
+
+            <h3>Report sections:</h3>
+            <ul class="top-level-ul">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#challenges">Challenges &amp; Lessons Learned</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#compliance">JANET Compliance</a></li>
+                <li><a href="#meetings">Meetings &amp; Contribution Log</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Energy4All — UN SDG 7: Affordable and Clean Energy</p>
+        <p>
+            <a href="pageEditor_ST2.html">Student 2 Page Editor</a> &nbsp;|&nbsp;
+            <a href="validation_ST1.html">My Validation Report</a> &nbsp;|&nbsp;
+            <a href="pageEditor_ST1.html#accessibility">Accessibility Statement</a>
+        </p>
+        <p>Student 1 — Navindu Fernando — Template, Navigation, Home Page, Gallery &amp; Content Page</p>
+        <p>&copy; 2026 Energy4All Team. Web Design and Development Coursework.</p>
+    </footer>
+
+</body>
+</html>
